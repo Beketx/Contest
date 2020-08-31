@@ -1,19 +1,26 @@
 def restoreString(s, indices):
-    R = len(s)
-    i=0
-    arr = []
-    brr = []
-    for j in s:
-        arr.append(j)
-        brr.append(j)
-    for k in indices:
-        brr[k]=arr[i]
-        i+=1
-    return brr
+    # R = len(s)
+    # i=0
+    # arr = []
+    # brr = []
+    # for j in s:
+    #     arr.append(j)
+    #     brr.append(j)
+    # for k in indices:
+    #     brr[k]=arr[i]
+    #     i+=1
+    # return brr
+
+
+    ans = [None]*len(s)
+    for a, c in zip(s, indices):
+        ans[c] = a
+    return "".join(ans)
+
+
 s = "aiohn"
 indices = [3,1,4,2,0]
 print(restoreString(s, indices))
-
 # arr[0]=brr[4]   l
 # arr[1] brr[5]   e
 # arr[2] brr[6]   e
